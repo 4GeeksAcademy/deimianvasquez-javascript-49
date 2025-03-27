@@ -269,10 +269,10 @@ function saludar() {
 
 
 const multiply = function (num1, num2) {
-    
-    if(typeof(num1) == "number"){
+
+    if (typeof (num1) == "number") {
         return num1 * num2
-    }else{
+    } else {
         return "Solo puede multiplicaer números"
     }
 }
@@ -287,9 +287,9 @@ const suma = (num1, num2) => num1 + num2
 let myArrayNotEmpty = ["Nombre", 5]
 let myArrayNew = new Array(5) // --> No se recomienda
 
-let myArray = [[1,50,20,10], "Maria", "Alvaro", "Guillermo", "Cristian", "Tobias","Julian", "Daniela", "Daniel"]
+let myArray = [[1, 50, 20, 10], "Maria", "Alvaro", "Guillermo", "Cristian", "Tobias", "Julian", "Daniela", "Daniel"]
 myArray[1] = "Valentina" // sobrescribimos el elemento 1 del array
-let result =  myArray.push("Maria", "Jose David")
+let result = myArray.push("Maria", "Jose David")
 // console.log(result)
 
 // console.log(myArray)
@@ -298,7 +298,7 @@ let result =  myArray.push("Maria", "Jose David")
 let namesito = "Deimian"
 
 myArray.push(namesito) // agrega en la ultima posición
-let ressultThree =  myArray.pop() // elimina a la ultima posición
+let ressultThree = myArray.pop() // elimina a la ultima posición
 
 myArray.shift() // elimina la primer posición 
 myArray.unshift("Soy el inicio")// agrega en la primer posición
@@ -342,5 +342,96 @@ myArray.unshift("Viviana")
 
 
 
-myArray.splice(0,3)
-console.log(myArray)
+myArray.splice(0, 3)
+// console.log(myArray)
+
+// devolver una lista con los números multiplos de 3
+function multiplo(data) {
+    let arr = []
+    for (let num of data) {
+        if (num % 3 == 0) {
+            arr.push(num)
+        }
+    }
+
+    return arr
+}
+
+// console.log(multiplo([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]))
+let fruits = ["Banana", "Orange", "apple", "Mango", "Apple", "orange", "orange"];
+
+// let arrAux = []
+// for(let name of fruits){
+//     arrAux.push(name.toLowerCase())
+// }
+// arrAux.sort()
+// console.log(arrAux)
+
+// let newFruit = fruits.toReversed()
+// // fruits.sort()
+// console.log(newFruit)
+// console.log(fruits)
+
+// let puntos = [40, 100, 1, 5, 25, 10];
+// puntos.sort(function(a, b) {return b - a })
+// console.log(puntos)
+
+// let autos = [
+
+//     { tipo: 'Volvo', año: 2016 },
+//     { tipo: 'Saab', año: 2001 },
+//     { tipo: 'BMW', año: 2010 }];
+// autos.sort(function (a, b) { return a.año - b.año });
+// console.log(autos); // --> [ {tipo: 'Saab', año: 2001}, {tipo: 'BMW', año: 2010}, {tipo: 'Volvo', año: 2016} ]
+
+
+// let newArray = myArray.map((item) => {
+//     return `Hola ¿qué tal ${item} ?`
+// })
+// console.log(newArray)
+
+
+// let arrFilter = myArray.filter((item, index, arr)=>{
+//     return item.length > 6
+// })
+
+// console.log(arrFilter)
+
+
+// myArray.forEach((item) => {
+//     console.log(`Hola ¿qué tal ${item}?`)
+// })
+
+
+// Calcular un número factorial
+// 5! : 1x2x3x4x5 -> 120
+//Recursividad
+
+function factorial(n) {  // 3
+    if (n === 0) {
+        return 1
+    } else {
+        return n * factorial(n - 1)// recursividad
+    }
+}
+
+// console.log(factorial(50))
+function factorialFor(n) {
+    if (n < 0) {
+      return "El factorial no está definido para números negativos.";
+    }
+    if (n === 0) {
+      return 1;
+    }
+  
+    let resultado = 1;
+    for (let i = 1; i <= n; i++) {
+      resultado *= i;
+    }
+    return resultado;
+  }
+
+
+  console.log(factorialFor(50))
+
+
